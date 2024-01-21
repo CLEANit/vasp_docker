@@ -13,6 +13,16 @@ You should put those files in the `vasp_source` directory
 You also need a working installation of docker
 
 
+Commands
+
+`docker build -t vasp5:0.1 .`
+
+
+`docker run -v .:/workspace vasp5:0.1`
+
+`docker run -it --volume .:/workspace vasp5:0.1`
+
+
 ```
 (base) itamblyn@telemachus arch % diff makefile.include.linux_gnu ../../../makefile.include 
 19c19
