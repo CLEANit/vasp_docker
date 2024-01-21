@@ -1,5 +1,5 @@
 # Vasp source files
-./vasp_source/*
+*/vasp_source/*
 
 # Prerequisites
 *.d
