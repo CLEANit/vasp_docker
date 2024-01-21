@@ -13,4 +13,35 @@ You should put those files in the `vasp_source` directory
 You also need a working installation of docker
 
 
-
+```
+(base) itamblyn@telemachus arch % diff makefile.include.linux_gnu ../../../makefile.include 
+19c19
+< FFLAGS     = -w
+---
+> FFLAGS     = -w -fallow-argument-mismatch
+24,28c24,31
+< LIBDIR     = /opt/gfortran/libs/
+< BLAS       = -L$(LIBDIR) -lrefblas
+< LAPACK     = -L$(LIBDIR) -ltmglib -llapack
+< BLACS      = 
+< SCALAPACK  = -L$(LIBDIR) -lscalapack $(BLACS)
+---
+> #LIBDIR     = /opt/gfortran/libs/
+> #BLAS       = -L$(LIBDIR) -lrefblas
+> #LAPACK     = -L$(LIBDIR) -ltmglib -llapack
+> #BLACS      = 
+> #SCALAPACK  = -L$(LIBDIR) -lscalapack $(BLACS)
+> BLAS        = -lopenblas
+> LAPACK      = -lopenblas
+> SCALAPACK   = -lscalapack-openmpi
+32,34c35,39
+< FFTW       ?= /opt/gfortran/fftw-3.3.4-GCC-5.4.1
+< LLIBS      += -L$(FFTW)/lib -lfftw3
+< INCS       = -I$(FFTW)/include
+---
+> #FFTW       ?= /opt/gfortran/fftw-3.3.4-GCC-5.4.1
+> #LLIBS      += -L$(FFTW)/lib -lfftw3
+> LLIBS      += -lfftw3 -lfftw3_omp
+> #INCS       = -I$(FFTW)/include
+> INCS       = -I/usr/include
+```

@@ -1,5 +1,7 @@
 # Vasp source files
-*/vasp_source/*
+vasp_source/potpaw_PBE.54.tar.gz
+vasp_source/vasp.5.4.4.pl2.tgz
+vasp_source/vdw_kernel.bindat.gz
 
 # Prerequisites
 *.d
