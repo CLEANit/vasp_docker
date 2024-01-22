@@ -15,12 +15,12 @@ You also need a working installation of docker
 
 Commands
 
-`docker build -t vasp5:0.1 .`
+`docker build -t vp5:0.1 .`
 
 
-`docker run -v .:/workspace vasp5:0.1`
+`docker run -v .:/workspace vp5:0.1`
 
-`docker run -it --volume .:/workspace vasp5:0.1`
+`docker run -it --volume .:/workspace vp5:0.1`
 
 
 ```
